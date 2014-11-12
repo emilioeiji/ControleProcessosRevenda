@@ -1,5 +1,8 @@
-Escopo Controles Processos Revenda
+Controles Processos Revenda
 ======
+
+Escopo
+=====
 
 Verifica Web Preços
 
