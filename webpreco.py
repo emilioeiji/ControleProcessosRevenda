@@ -4,7 +4,7 @@
 """ 
 	Verifica se o arquivo do web preços
 	foi enviado ou não e retorna o status da pesquisa
-	0 = não enviado, 1 = enviado, -1 = transição, -2 = arquivo nao encontrado
+	0 = ok, 1 = warning, 2 = critical, 3 = uknown
 	Por: Emilio Eiji
 	email: contato@emilioeiji.com.br
 """
@@ -44,22 +44,17 @@ def pesquisa_old():
 
 def pesquisa_webprecos():
     if pesquisa_saida() == 1 and pesquisa_old() == 1:
-        return (int(-1))
+        print("UKNOWN - Arquivo %s em transiçao." % wpsv)
+        sys.exit(3)
     elif pesquisa_saida() == 1:
-        return (int(0))
+        print("WARNING - Arquivo parado no diretório saida.")
+        sys.exit(1)
     elif pesquisa_old() == 1:
-        return (int(1))
+        print("OK - Arquivo %s enviado com sucesso." % wpsv)
+        sys.exit(0)
     else:
-        return (int(-2))
+        print("CRITIAL - Arquivo %s não encontrado." % wpsv)
+        sys.exit(2)
 
 
-if pesquisa_webprecos() == 0:
-    print("Arquivo %s está parado no diretório saida." % (wpsv))
-elif pesquisa_webprecos() == 1:
-    print("Arquivo %s foi enviado." % (wpsv))
-elif pesquisa_webprecos() == -1:
-    print("Arquivo %s está em transição." % (wpsv))
-elif pesquisa_webprecos() == -2:
-    print("O arquivo %s não foi encontrado." % (wpsv))
-else:
-    print("Erro desconhecido.")
+pesquisa_webprecos()
