@@ -53,23 +53,13 @@ def pesquisa_webprecos():
         return (int(-2))
 
 
-""" Validação
-resultado_saida = pesquisa_saida()
-print("O resultado do diretório saida é: ", resultado_saida)
-
-resultado_old = pesquisa_old()
-print("O resultado do diretório old é: ", resultado_old)
-"""
-resultado = pesquisa_webprecos()
-print("O resultado da presquisa web preços é: ", resultado)
-
 if pesquisa_webprecos() == 0:
-	print("Arquivo %s parado no diretório saida." % (wpsv))
+    print("Arquivo %s está parado no diretório saida." % (wpsv))
 elif pesquisa_webprecos() == 1:
-	print("Arquivo %s enviado." % (wpsv))
+    print("Arquivo %s foi enviado." % (wpsv))
 elif pesquisa_webprecos() == -1:
-	print("Arquivo %s em transição." % (wpsv))
+    print("Arquivo %s está em transição." % (wpsv))
 elif pesquisa_webprecos() == -2:
-	print("O arquivo %s não foi encontrado." % (wpsv))
+    print("O arquivo %s não foi encontrado." % (wpsv))
 else:
-	print("Erro desconhecido.")
+    print("Erro desconhecido.")
