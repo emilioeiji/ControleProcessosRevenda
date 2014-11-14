@@ -18,4 +18,4 @@ Verifica Web Preços
 	0 = Para enviado - OK
 	1 = Para não enviado - Warning
 	2 = Para arquivo não encontrado - Critial
-	3 = Para arquivo em transição - Unknown
+	3 = Para arquivo em transição - Uknown

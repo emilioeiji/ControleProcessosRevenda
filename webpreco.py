@@ -26,30 +26,22 @@ old = '/media/promax/int/sftp/old/'
 dir_old = os.listdir(old)
 
 
-def pesquisa_saida():
-    nome_arquivo_saida = []
-    for arquivo_saida in dir_saida:
-        lista_saida = arquivo_saida[0:12]
-        nome_arquivo_saida.append(str(lista_saida))
-    return (int(nome_arquivo_saida.count(wpsv)))
-
-
-def pesquisa_old():
-    norme_arquivo_old = []
-    for arquivo_old in dir_old:
-        lista_old = arquivo_old[0:12]
-        norme_arquivo_old.append(str(lista_old))
-    return (int(norme_arquivo_old.count(wpsv)))
+def pesquisa_arquivo(diretorio):
+    nome_arquivo = []
+    for arquivo in diretorio:
+        lista_arquivo = arquivo[0:12]
+        nome_arquivo.append(str(lista_arquivo))
+    return (int(nome_arquivo.count(wpsv)))
 
 
 def pesquisa_webprecos():
-    if pesquisa_saida() == 1 and pesquisa_old() == 1:
+    if pesquisa_arquivo(dir_saida) == 1 and pesquisa_arquivo(dir_old) == 1:
         print("UKNOWN - Arquivo %s em transiçao." % wpsv)
         sys.exit(3)
-    elif pesquisa_saida() == 1:
+    elif pesquisa_arquivo(dir_saida) == 1:
         print("WARNING - Arquivo parado no diretório saida.")
         sys.exit(1)
-    elif pesquisa_old() == 1:
+    elif pesquisa_arquivo(dir_old) == 1:
         print("OK - Arquivo %s enviado com sucesso." % wpsv)
         sys.exit(0)
     else:
