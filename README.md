@@ -19,3 +19,12 @@ Verifica Web Preços
 	1 = Para não enviado - Warning
 	2 = Para arquivo não encontrado - Critial
 	3 = Para arquivo em transição - Uknown
+	O script python deverá ser colocado no diretório libexec do nagios
+	e atribuido as permissões ao usuário e grupo com permissões de
+	execução do nagios.
+	Ex: "chown nagios:nagios webpreco.py" - Permissão para usário e grupo.
+	Ex: "chmod 755 webpreco.py" - Permissão para execução.
+
+	Pendências:
+	* Tratamento no horário de envio, se for enviado após as 12 hrs.
+	* Tratamento do arquivo durante os Domingo onde não é gerado e enviado o arquivo.
