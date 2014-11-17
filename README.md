@@ -29,3 +29,11 @@ Verifica Web Preços
 	- Tratamento no horário de envio, se for enviado após as 12 hrs.
 	- Tratamento do arquivo durante os Domingo onde não é gerado e enviado o arquivo.
 	
+Verifica Validade Certificado Digital Nfe
+	
+	Pega data de validade do certificado digital A1 e verifica a data em que o mesmo
+	expira, retornando os seguintes valores:
+	0 = Ok
+	1 = Warning - Expira em 30 dias.
+	2 = Critical - Expira em 15 dias.
+	3 = Uknown - Erro no calculo da validade.
