@@ -26,5 +26,5 @@ Verifica Web Preços
 	Ex: "chmod 755 webpreco.py" - Permissão para execução.
 
 	Pendências:
-	* Tratamento no horário de envio, se for enviado após as 12 hrs.
-	* Tratamento do arquivo durante os Domingo onde não é gerado e enviado o arquivo.
+	- Tratamento no horário de envio, se for enviado após as 12 hrs.
+	- Tratamento do arquivo durante os Domingo onde não é gerado e enviado o arquivo.
