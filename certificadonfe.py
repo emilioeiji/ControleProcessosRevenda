@@ -3,6 +3,7 @@
 
 from datetime import datetime
 
+
 vencimento = datetime(2015, 6, 16)
 hoje = datetime.now()
 dias_vencimento = vencimento - hoje
