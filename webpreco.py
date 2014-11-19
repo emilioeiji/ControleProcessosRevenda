@@ -14,6 +14,7 @@ import sys
 from datetime import datetime
 
 # Definindo as variáveis necessárias
+# Utilizar weekday() para verificar o domingo
 now = datetime.now()
 datahora = ("%s/%s/%s %s:%s:%s" %
             (now.day, now.month, now.year, now.hour, now.minute, now.second))
