@@ -1,10 +1,10 @@
-Controles Processos Revenda
+Controles de Processos Revenda Ambev
 ======
 
 Escopo
 ------
 
-Verifica Web Preços
+Verifica envio do arquivo Web Preços
 
 	Acessar diretório Promax\int\sftp\saida
 	Verificar se existe o arquivo WPSVAAAAMMDD*.crp
@@ -29,7 +29,7 @@ Verifica Web Preços
 	- Tratamento no horário de envio, se for enviado após as 12 hrs.
 	- Tratamento do arquivo durante os Domingo onde não é gerado e enviado o arquivo.
 	
-Verifica Validade Certificado Digital Nfe
+Verifica a validade do certificado digital A3
 	
 	Pega data de validade do certificado digital A1 e verifica a data em que o mesmo
 	expira, retornando os seguintes valores:
