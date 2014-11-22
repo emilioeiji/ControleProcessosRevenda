@@ -37,3 +37,13 @@ Verifica a validade do certificado digital A3
 	1 = Warning - Expira em 30 dias.
 	2 = Critical - Expira em 15 dias.
 	3 = Uknown - Erro no calculo da validade.
+
+Verifica a emissão dos R's até as 09:00 hrs
+	
+	Verifica se foram emitidos os R's até às 09:00 para os funcionários listados no arquivo listaFuncionarios.txt
+	e retorna as seguintes informações:
+	0 = OK - das 12 hrs às 07:00 da manhã.
+	0 = Ok - Se os R's foram emitidos para todos os funcionários até às 09:00.
+	1 = Warning - Se não foram emitidos os R's para todos os funcionarios até às 09:00.
+	2 = Critial - Não foram emitidos todos os R's e já ultrapassou o horário limite de 09:00
+	3 = Erro inesperado na validação.
