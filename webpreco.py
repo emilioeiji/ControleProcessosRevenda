@@ -21,11 +21,21 @@ datahora = ("%s/%s/%s %s:%s:%s" %
 wpsv = ("WPSV%s%s%s" % (now.year, now.month, now.day))
 # Definir o diretório de pesquisa onde ficam os arquivos a serem enviados.
 saida = '/media/promax/int/sftp/saida/'
-dir_saida = os.listdir(saida)
+
+try:
+    dir_saida = os.listdir(saida)
+except:
+    print("Não foi possivel listar o diretório saida.")
+    sys.exit(3)
+
 # Definir o diretório de pesquisa onde ficam os arquivos já enviados.
 old = '/media/promax/int/sftp/old/'
-dir_old = os.listdir(old)
 
+try:
+	dir_old = os.listdir(old)
+except:
+	print("Não foi possível listar o diretório old.")
+	sys.exit(3)
 
 def pesquisa_arquivo(diretorio):
     nome_arquivo = []
