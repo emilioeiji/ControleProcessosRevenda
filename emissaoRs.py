@@ -8,10 +8,17 @@ from datetime import datetime
 
 
 agora = datetime.now()
+horaInicio = agora.replace(hour=7, minute=0, second=0, microsecond=0)
 horaLimite = agora.replace(hour=9, minute=0, second=0, microsecond=0)
 
-connection_string = ('Driver=FreeTDS;Server=172.16.56.241;port=1433;uid=sa;pwd=sa;database=opvd')
-connection = pypyodbc.connect(connection_string)
+try:
+	connection_string = (
+	    'Driver=FreeTDS;Server=0.0.0.0;port=1433;uid=user;pwd=pw;database=db')
+	connection = pypyodbc.connect(connection_string)
+except:
+	print("Ocorreu algum erro na conexão.")
+	sys.exit()
+
 SQL = "SELECT cod_empregado, dat_inc, cod_usu_inc FROM log_relatorio WHERE cod_meta = 12 AND dat_inc between '2014-11-24 00:00:00.000' and '2014-11-24 23:59:00.000' ORDER BY cod_empregado"
 
 cur = connection.cursor()
@@ -50,10 +57,29 @@ arquivoFuncionario.close()
 
 emitido = []
 naoEmitido = []
+verifical = []
 validaStatus = {}
-for verifica in listaFuncionarios:
-    valida = verifica in codl
-'''   
+
+
+def verificaStatus():
+    for verifica in listaFuncionarios:
+        valida = verifica in codl
+        if valida == True:
+            validaStatus[verifica] = "Ok"
+        else:
+            verifical.append(verifica)
+            validaStatus[verifica] = "NOk"
+    if verifical == []:
+    	pass
+
+
+if agora > horaInicio and agora < horaLimite:
+    pass
+else:
+    print("após horário limite")
+
+'''    
+    valida = verifica in codl   
  	if valida == True:
         if horaEmissao < horaLimite:
         	print("Emitido antes do horario")
